@@ -104,24 +104,20 @@ module.exports.component = {
 
     var x = 0
     var y = 0
+    var anchor = data.anchor
+    var baseline = data.baseline
 
     // anchors text left/center/right
-    switch (data.anchor) {
-      case 'left': x = 0; break
-      case 'right': x = -layout.width; break
-      case 'center':
-        x = -layout.width / 2
-        break
-    }
+    if (anchor === 'left') x = 0
+    else if (anchor === 'right') x = -layout.width
+    else if (anchor === 'center') x = -layout.width / 2
+    else throw new TypeError('invalid anchor ' + anchor)
 
     // anchors text to top/center/bottom
-    switch (data.baseline) {
-      case 'bottom': y = 0; break
-      case 'top': y = -layout.height + layout.ascender; break
-      case 'center':
-        y = -layout.height / 2
-        break
-    }
+    if (baseline === 'bottom') y = 0
+    else if (baseline === 'top') y = -layout.height + layout.ascender
+    else if (baseline === 'center') y = -layout.height / 2
+    else throw new TypeError('invalid baseline ' + baseline)
 
     this._mesh.position.x = scale * x
     this._mesh.position.y = scale * y
