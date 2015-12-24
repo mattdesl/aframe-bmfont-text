@@ -1,0 +1,57 @@
+{
+  "name": "aframe-bmfont-text",
+  "version": "1.0.0",
+  "description": "bitmap font text component for AFrame",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "load-bmfont": "^1.2.3",
+    "object-assign": "^4.0.1",
+    "three-bmfont-text": "^2.0.1"
+  },
+  "devDependencies": {
+    "aframe-core": "^0.1.3",
+    "budo": "^7.1.0",
+    "loud-rejection": "^1.2.0",
+    "standard": "^5.4.1"
+  },
+  "standard": {
+    "globals": [
+      "THREE"
+    ]
+  },
+  "scripts": {
+    "test": "standard && node test.js",
+    "start": "budo demo/index.js:bundle.js --live"
+  },
+  "keywords": [
+    "aframe",
+    "text",
+    "bmfont",
+    "bitmap",
+    "font",
+    "bitmaps",
+    "type",
+    "texts",
+    "typography",
+    "fonts",
+    "webgl",
+    "webvr",
+    "3d",
+    "2d",
+    "glsl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/aframe-bmfont-text.git"
+  },
+  "homepage": "https://github.com/mattdesl/aframe-bmfont-text",
+  "bugs": {
+    "url": "https://github.com/mattdesl/aframe-bmfont-text/issues"
+  }
+}

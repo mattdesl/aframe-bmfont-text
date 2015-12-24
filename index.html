@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>aframe-bmfont-text</title>
+  <script src="bundle.js"></script>
+</head>
+<body>
+  <a-assets>
+    <img src="demo/fonts/Exo2Bold.png">
+  </a-assets>
+  <a-scene>
+    <a-entity id="text"
+              bmtext="width: 300;
+              anchor: center;
+              align: center;
+              baseline: center;
+              font: demo/fonts/Monoid.fnt"
+              material="color: #66E1B4; shader: sdf;"
+              position="0 0 0"
+              scale="0.25 0.25 0.25"></a-entity>
+  </a-scene>
+  <script>
+  var bmtext = document.querySelector('#text')
+  bmtext.setAttribute('bmtext', 'text', 'Click to change color and font.')
+
+  window.addEventListener('click', tap)
+
+  var colors = [
+    'gray', '#66E1B4', '#1d1d1d', '#000000',
+    'blue', 'red', 'green'
+  ]
+
+  var fonts = [
+    'demo/fonts/Monoid.fnt',
+    'demo/fonts/Aileron-Semibold.fnt',
+    'demo/fonts/DejaVu-sdf.fnt',
+    'demo/fonts/Exo2Bold.fnt',
+    'demo/fonts/KelsonSans.fnt',
+    'demo/fonts/SourceCodePro.fnt'
+  ]
+
+  var idx = 1 // start after Monoid
+
+  function tap () {
+    // set a new color
+    var color = colors[Math.floor(Math.random() * colors.length)]
+    bmtext.setAttribute('material', 'color', color)
+
+    // load a new font
+    var font = fonts[idx++ % fonts.length]
+    bmtext.setAttribute('bmtext', 'font', font)
+  }
+  </script>
+</body>
+</html>
