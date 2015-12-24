@@ -9,6 +9,7 @@
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
+  "private": true,
   "dependencies": {
     "load-bmfont": "^1.2.3",
     "object-assign": "^4.0.1",
